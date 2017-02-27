@@ -1,3 +1,8 @@
+/*The purpose of this question is to create a random lottery ticket generator by 
+ *creating an ArrayList of 49 numbers and using a random integer generator to 
+ *remove the entries at those specified indices
+ */
+ 
 import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.concurrent.ThreadLocalRandom;
@@ -16,8 +21,9 @@ public class Lottery {
 		
 		
 		for(int i = 0; i < 6; i++){
-			//min and max+1 to make it inclusive
-			int x = ThreadLocalRandom.current().nextInt(1, 50); 
+			//the arguments passed into .nextInt() are the range of indices
+			//NOTE: +1 added to the max to make it inclusive
+			int x = ThreadLocalRandom.current().nextInt(0, 50); 
 			array.remove(x);
 		}
 		return array;
